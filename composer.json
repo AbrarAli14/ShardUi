@@ -1,0 +1,64 @@
+{
+    "name": "abrarali14/shard-ui",
+    "description": "Shard UI – Distributed viewport package for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.0",
+    "homepage": "https://github.com/AbrarAli14/ShardUi",
+    "authors": [
+        {
+            "name": "Abrar Ali",
+            "homepage": "https://github.com/AbrarAli14",
+            "role": "Maintainer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0",
+        "illuminate/view": "^11.0",
+        "illuminate/events": "^11.0",
+        "simplesoftwareio/simple-qrcode": "^4.2"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0",
+        "pestphp/pest": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Shard\\Ui\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Shard\\Ui\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@php artisan vendor:publish --tag=shard-ui-migrations",
+            "@php artisan migrate"
+        ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=shard-ui-migrations --force",
+            "@php artisan migrate"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Shard\\Ui\\ShardServiceProvider"
+            ]
+        }
+    },
+    "support": {
+        "issues": "https://github.com/AbrarAli14/ShardUi/issues",
+        "source": "https://github.com/AbrarAli14/ShardUi"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
