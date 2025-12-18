@@ -10,6 +10,12 @@ return [
     'demo' => [
         'enabled' => env('SHARD_UI_ENABLE_DEMO', false),
         'allow_anonymous' => env('SHARD_UI_ALLOW_ANONYMOUS', true),
+        'user' => [
+            'model' => env('SHARD_UI_DEMO_USER_MODEL'),
+            'email' => env('SHARD_UI_DEMO_USER_EMAIL', 'demo@shard-ui.com'),
+            'name' => env('SHARD_UI_DEMO_USER_NAME', 'Demo User'),
+            'password' => env('SHARD_UI_DEMO_USER_PASSWORD', 'password'),
+        ],
     ],
     'auth' => [
         'required' => env('SHARD_UI_REQUIRE_AUTH', false),
@@ -54,6 +60,8 @@ return [
             'credential_expiration_days' => env('WEBAUTHN_CREDENTIAL_EXPIRATION', 365),
             'challenge_length' => env('WEBAUTHN_CHALLENGE_LENGTH', 32),
             'user_verification' => env('WEBAUTHN_USER_VERIFICATION', 'required'),
+            'rp_id' => env('WEBAUTHN_RP_ID', parse_url(env('APP_URL', 'http://localhost'), PHP_URL_HOST) ?: 'localhost'),
+            'origin' => env('WEBAUTHN_ORIGIN', env('APP_URL', 'http://localhost')),
         ],
         'devices' => [
             'max_devices_per_user' => env('BIOMETRIC_MAX_DEVICES_PER_USER', 5),

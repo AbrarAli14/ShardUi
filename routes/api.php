@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Shard\Ui\Http\Controllers\ShardApiController;
-use App\Http\Controllers\BiometricController;
+use Shard\Ui\Biometric\Http\Controllers\BiometricController;
 
 // These routes are not auto-prefixed by Laravel's RouteServiceProvider, so we prefix them here.
 Route::prefix('api')->middleware(['api'])->group(function (): void {

@@ -28,6 +28,13 @@
             "Shard\\Ui\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Shard\\Ui\\ShardServiceProvider"
+            ]
+        }
+    },
     "autoload-dev": {
         "psr-4": {
             "Shard\\Ui\\Tests\\": "tests/"

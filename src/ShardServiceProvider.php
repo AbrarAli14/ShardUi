@@ -74,6 +74,10 @@ final class ShardServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../database/migrations/biometric' => database_path('migrations'),
         ], 'shard-ui-migrations');
+
+        $this->publishes([
+            __DIR__ . '/../stubs/app/Http/Controllers/BiometricController.php' => app_path('Http/Controllers/BiometricController.php'),
+        ], 'shard-ui-controller');
     }
 
     private function registerRoutes(): void
